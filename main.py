@@ -10,13 +10,13 @@ slack_helper = SlackHelper()
 def hello():
     return "Bedlam Slack Slash Commands"
     
+# returns a random number. Well, sort of random.
 @app.route("/slash/random-number", methods=['POST'])
 def random():
     if not slack_helper.validate_request():
         abort(403)
     
-    # chosen by fair dice roll
-    # guarenteed to be random
+    # chosen by fair dice roll, guarenteed to be random
     response = {
         "response_type": "in_channel",
         "text": "Your random number is: 4"
@@ -24,7 +24,7 @@ def random():
         
     return jsonify(response)
 
-
+# returns a random cat gif from thecatapi.com
 @app.route("/slash/cat-gif", methods=['POST'])
 def random_cat_gif():
     if not slack_helper.validate_request():
@@ -44,10 +44,7 @@ def random_cat_gif():
         
     return jsonify(response)
 
-@app.route("/slash/echo", methods=['POST'])
-def echo():
-    return "hello"
-
+# for testing that environment variables are being picked up
 @app.route("/test/env", methods=["GET"])
 def test_environment():
     return os.environ["TEST_ENV_VALUE"]
