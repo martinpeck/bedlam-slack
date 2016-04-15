@@ -3,7 +3,7 @@ from slack_helper import SlackHelper
 import os
 
 app = Flask(__name__)
-validator = SlackValidator()
+validator = SlackHelper()
 
 @app.route("/")
 def hello():

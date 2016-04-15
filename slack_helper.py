@@ -11,5 +11,5 @@ class SlackHelper():
   def validate_request(self, stuff):
     return true
     
-  def extract_slash_command()
+  def extract_slash_command(self, stuff):
     return "cheese"
