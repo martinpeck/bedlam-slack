@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import jsonify
 from slack_helper import SlackHelper
 import os
 
@@ -16,7 +17,12 @@ def random():
     
     # chosen by fair dice roll
     # guarenteed to be random
-    return "Your random number is: 4"
+    response = {
+        "response_type": "in_channel",
+        "text": "Your random number is: 4"
+        }
+        
+    return jsonify(response)
 
 @app.route("/slash/echo", methods=['POST'])
 def echo():
