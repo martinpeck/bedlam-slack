@@ -35,7 +35,7 @@ def random_cat_gif():
         "text": "Here is your random cat:",
         "attachments" : [
             {
-                "image-url" : "http://thecatapi.com/api/images/get?format=src&type=gif"
+                "image_url" : "http://thecatapi.com/api/images/get?format=src&type=gif"
             }
           ]
         }
