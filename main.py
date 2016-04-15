@@ -30,11 +30,11 @@ def random_cat_gif():
     if not slack_helper.validate_request():
         abort(403)
     
-    response = {
-        "response_type": "in_channel",
-        "text": "Here is your random cat:",
+    response = {        
         "attachments" : [
             {
+                "fallback" : "A cat gif",
+                "title" : "Random cat gif",
                 "image_url" : "http://thecatapi.com/api/images/get?format=src&type=gif"
             }
           ]
