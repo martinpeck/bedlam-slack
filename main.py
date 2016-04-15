@@ -24,6 +24,24 @@ def random():
         
     return jsonify(response)
 
+
+@app.route("/slash/cat-gif", methods=['POST'])
+def random_cat_gif():
+    if not slack_helper.validate_request():
+        abort(403)
+    
+    response = {
+        "response_type": "in_channel",
+        "text": "Here is your random cat:",
+        "attachments" : [
+            {
+                "image-url" : "http://thecatapi.com/api/images/get?format=src&type=gif"
+            }
+          ]
+        }
+        
+    return jsonify(response)
+
 @app.route("/slash/echo", methods=['POST'])
 def echo():
     return "hello"
