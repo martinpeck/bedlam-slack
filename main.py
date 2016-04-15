@@ -3,7 +3,7 @@ from slack_helper import SlackHelper
 import os
 
 app = Flask(__name__)
-validator = SlackHelper()
+slack_helper = SlackHelper()
 
 @app.route("/")
 def hello():
@@ -11,7 +11,7 @@ def hello():
     
 @app.route("/slash/random-number", methods=['POST'])
 def random():
-    if not slack_helper.is_request_valid:
+    if not slack_helper.validate_request():
         abort(403)
     
     # chosen by fair dice roll
