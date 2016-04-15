@@ -18,7 +18,7 @@ def random():
     # guarenteed to be random
     return "Your random number is: 4"
 
-@app.route("/slash/echo", methods=['POST'])    
+@app.route("/slash/echo", methods=['POST'])
 def echo():
     return "hello"
 
