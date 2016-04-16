@@ -26,6 +26,6 @@ If you find bugs, or have suggestions, open a GitHub issue
 
 ## Contributions and Licensing
 
-All that stuff can be found in `LICENSE.md` and `CONTRIBUTING.md`. 
+All that stuff can be found in [LICENSE.md](LICENSE.md) and [CONTRIBUTING.md](CONTRIBUTING.md). 
 Go on...read them. 
 You know you want to.
