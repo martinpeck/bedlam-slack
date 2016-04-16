@@ -1,6 +1,6 @@
 from bedlam_slack import app
 from flask import request
-from slack_helper import SlackHelper
+from bedlam_slack.helpers import SlackHelper
 
 # returns an UrbanDictionary URI
 @app.route("/slash/urban-dictionary", methods=['POST'])
