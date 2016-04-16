@@ -7,7 +7,7 @@ def urban_dictionary_uri():
     if not slack_helper.validate_request():
         abort(403)
 
-    phrase = request.values.get('text').strip().replace(' ', '+')
+    phrase = request.values.get("text").strip().replace(' ', '+')
 
     response = {
         "response_type": "in_channel",

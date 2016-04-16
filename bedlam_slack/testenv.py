@@ -7,7 +7,7 @@ from flask import jsonify, request
 def test_environment():
     return os.environ["TEST_ENV_VALUE"]
     
-@app.route("/test/values", methods=["POST"])
-def echo_request_values():
-    return jsonify(request.values)
+@app.route("/test/text-echo", methods=["POST"])
+def echo_request_text_values():
+    return request.values.get("text")
      
