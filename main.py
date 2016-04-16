@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import jsonify
+from flask import request
 from slack_helper import SlackHelper
 import os
 
@@ -16,7 +17,7 @@ def random():
     if not slack_helper.validate_request():
         abort(403)
     
-    # chosen by fair dice roll, guarenteed to be random
+    # chosen by fair dice roll, guaranteed to be random
     response = {
         "response_type": "in_channel",
         "text": "Your random number is: 4"
@@ -44,6 +45,20 @@ def random_cat_gif():
         
     return jsonify(response)
 
+# returns an UrbanDictionary URI
+@app.route("/slash/urban-dictionary", methods=['POST'])
+def urban_dictionary_uri():
+    if not slack_helper.validate_request():
+        abort(403)
+
+    phrase = request.values.get('text').strip().replace(' ', '+')
+
+    response = {
+        "response_type": "in_channel",
+        "text": "http://www.urbandictionary.com/define.php?term=" + phrase
+    }
+
+    return jsonify(response)
 # for testing that environment variables are being picked up
 @app.route("/test/env", methods=["GET"])
 def test_environment():
