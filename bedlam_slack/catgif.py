@@ -1,6 +1,5 @@
-from bedlam_slack import app
+from bedlam_slack import app, slack_helper
 from flask import jsonify
-from bedlam_slack.helpers import SlackHelper
 
 # returns a random cat gif from thecatapi.com
 @app.route("/slash/cat-gif", methods=['POST'])

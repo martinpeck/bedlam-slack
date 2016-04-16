@@ -1,5 +1,8 @@
 from flask import Flask
+from bedlam_slack.helpers import SlackHelper
+
 app = Flask(__name__)
+slack_helper = SlackHelper()
 
 import bedlam_slack.random
 import bedlam_slack.catgif
