@@ -6,8 +6,8 @@ slack_helper = SlackHelper()
 
 import bedlam_slack.random
 import bedlam_slack.catgif
-import bedlam_slack.testenv
 import bedlam_slack.ud
+import bedlam_slack.diagnostic
 
 @app.route("/")
 def hello():
