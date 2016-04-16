@@ -56,7 +56,7 @@ def urban_dictionary_uri():
     response = {
         "response_type": "in_channel",
         "text": "http://www.urbandictionary.com/define.php?term=" + phrase,
-        "unfurl_links": true
+        "unfurl_links": "true"
     }
 
     return jsonify(response)
