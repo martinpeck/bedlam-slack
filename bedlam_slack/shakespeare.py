@@ -10,7 +10,7 @@ def shakespeare():
      
     response = {
         "response_type": "in_channel",
-        "text": choice(group1) + " " + choice(group2) + " " + choice(group3)
+        "text": "You are a" + " " + choice(group1) + " " + choice(group2) + " " + choice(group3)
         }
         
     return jsonify(response)
