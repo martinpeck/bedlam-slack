@@ -5,8 +5,8 @@ class SlackHelper():
 
   def __init__(self):
     
-    self.token = os.environ["SLACK_TOKEN"]
-    self.team_name = os.environ["SLACK_TEAM"]
+    self.token = os.environ.get("SLACK_TOKEN", "")
+    self.team_name = os.environ.get("SLACK_TEAM", "")
 
   def validate_request(self):
     return True

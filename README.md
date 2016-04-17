@@ -1,5 +1,7 @@
 # Bedlam Slack - Slash Commands
 
+[![Build Status](https://travis-ci.org/martinpeck/bedlam-slack.svg?branch=master)](https://travis-ci.org/martinpeck/bedlam-slack)
+
 This is a flask app that implements a number of slash commands for Slack.
 
 ## Installation
