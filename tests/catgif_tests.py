@@ -23,8 +23,9 @@ class CatGit_Tests:
 
     def test_parse_cat_api_response(self):
     
-        url = bedlam_slack.catgif.parse_cat_api_response(self.response_text)
-        assert url == "http://foo.bar.baz/123/456"       
+        resp = bedlam_slack.catgif.parse_cat_api_response(self.response_text)
+        assert resp["image_url"] == "http://foo.bar.baz/123/456"  
+        assert resp["title_url"] == "http://thecatapi.com/?id=test"       
    
     @responses.activate
     def test_cat_gif_requests_are_working(self):
@@ -44,7 +45,11 @@ class CatGit_Tests:
         assert data.get("text") is not None
         assert data["text"] ==  "Here is your random cat:"
         
+        assert data.get("title_link") is not None
+        assert data["title_link"] == "http://thecatapi.com/?id=test"
+        
         assert data.get("attachments") is not None
         assert len(data["attachments"]) == 1
+        
         assert data["attachments"][0].get("image_url") is not None
         assert data["attachments"][0]["image_url"] == "http://foo.bar.baz/123/456"

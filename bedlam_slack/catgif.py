@@ -9,7 +9,9 @@ CAT_API_TOKEN = ""
 # extract the url from the response text
 def parse_cat_api_response(response_text):    
     soup = BeautifulSoup(response_text, "lxml")
-    return soup.image.url.text
+    image_url = soup.image.url.text
+    title_url = soup.image.source_url.text 
+    return {"image_url": image_url, "title_url": title_url}
 
 # returns a random cat gif from thecatapi.com
 def get_cat_image(token, url):
@@ -22,17 +24,18 @@ def random_cat_gif():
     if not slack_helper.validate_request():
         abort(403)
     
-    image_url = get_cat_image(CAT_API_TOKEN, CAT_API_URL)
+    cat = get_cat_image(CAT_API_TOKEN, CAT_API_URL)
      
     # return response
     response = {
         "response_type": "in_channel",
         "text": "Here is your random cat:",
+        "title_link" : cat["title_url"],
         "attachments" : [
             {
                 "fallback" : "A cat gif",
                 "title" : "Random cat gif",
-                "image_url" : image_url
+                "image_url" : cat["image_url"]
             }
           ]
         }
