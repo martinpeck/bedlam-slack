@@ -30,11 +30,11 @@ def random_cat_gif():
     response = {
         "response_type": "in_channel",
         "text": "Here is your random cat:",
-        "title_link" : cat["title_url"],
         "attachments" : [
             {
                 "fallback" : "A cat gif",
-                "title" : "Random cat gif",
+                "title" : "Random cat gif from thecatapi.com",
+                "title_link" : cat["title_url"],
                 "image_url" : cat["image_url"]
             }
           ]

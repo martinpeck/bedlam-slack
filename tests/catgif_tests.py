@@ -45,11 +45,13 @@ class CatGit_Tests:
         assert data.get("text") is not None
         assert data["text"] ==  "Here is your random cat:"
         
-        assert data.get("title_link") is not None
-        assert data["title_link"] == "http://thecatapi.com/?id=test"
-        
         assert data.get("attachments") is not None
         assert len(data["attachments"]) == 1
         
-        assert data["attachments"][0].get("image_url") is not None
-        assert data["attachments"][0]["image_url"] == "http://foo.bar.baz/123/456"
+        attachment = data["attachments"][0]
+        
+        assert attachment.get("image_url") is not None
+        assert attachment["image_url"] == "http://foo.bar.baz/123/456"
+        
+        assert attachment.get("title_link") is not None
+        assert attachment["title_link"] == "http://thecatapi.com/?id=test"
