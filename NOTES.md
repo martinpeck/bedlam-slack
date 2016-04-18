@@ -20,3 +20,11 @@ These are a collection of developer notes.
 
 - foreman <https://ddollar.github.io/foreman/>
 
+## Requests and Responses
+
+- Requests docs: <http://docs.python-requests.org/en/master/#>
+- Responses (for mocking Requests): <https://github.com/getsentry/responses>
+
+## Testing
+- Testing your Code: <http://docs.python-guide.org/en/latest/writing/tests/>
+- Mock : <http://www.voidspace.org.uk/python/mock/>
