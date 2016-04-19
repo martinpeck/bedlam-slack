@@ -1,7 +1,7 @@
-[![Stories in Ready](https://badge.waffle.io/martinpeck/bedlam-slack.png?label=ready&title=Ready)](https://waffle.io/martinpeck/bedlam-slack)
+
 # Bedlam Slack - Slash Commands
 
-[![Build Status](https://travis-ci.org/martinpeck/bedlam-slack.svg?branch=master)](https://travis-ci.org/martinpeck/bedlam-slack)
+[![Build Status](https://travis-ci.org/martinpeck/bedlam-slack.svg?branch=master)](https://travis-ci.org/martinpeck/bedlam-slack) [![Stories in Ready](https://badge.waffle.io/martinpeck/bedlam-slack.png?label=status-ready&title=Ready)](https://waffle.io/martinpeck/bedlam-slack)
 
 This is a flask app that implements a number of slash commands for Slack.
 
